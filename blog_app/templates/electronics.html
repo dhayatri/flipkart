@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}about page{% endblock %}
+
+{% block content %}
+<center><h1>List of Electronics</h1></center>
+<div class="row">
+{% for product in products %}
+    {% if product.category=='electronics' %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <a type="button" class="btn btn-primary" href="/">Wishlist</a>
+            <a type="button" class="btn btn-primary" href="/">Cart</a>
+          </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock %}
+
